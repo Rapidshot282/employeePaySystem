@@ -12,7 +12,7 @@ namespace Exam2023_01_01
 {
     public partial class Form1 : Form
     {
-        private Worker worker;
+        private Worker worker; // 인스턴스화
         private int totalPaySum; // 추가: 총 지불 금액의 합을 저장하는 변수
 
         class Worker
@@ -67,9 +67,9 @@ namespace Exam2023_01_01
                     worker.workertotalPay = worker.workerPayLunch(calHour, worker.pay);
                 }
             }
-            else
+            else 
             {
-                if (calHour == 1)
+                if (calHour == 1) //1시간 차이 났을 때 분으로 1시간 계산 반영
                 {
                     if (minute_1 == minute_2)
                     {
@@ -95,7 +95,7 @@ namespace Exam2023_01_01
 
             totalPaySum = 0;
 
-            foreach (var workerpay in listBox1.Items)
+            foreach (var workerpay in listBox1.Items) // 리스트박스 내에 저장된 정보를 split으로 나눠서 실시간 봉급 계산
             {
                 var input = workerpay.ToString();
                 var s = input.Split(',');
